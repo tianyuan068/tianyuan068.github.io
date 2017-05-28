@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JavaScript面向对象编程—this详解 | 幻墨如烟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="前言在JavaScriptOPPt面向对象编程中，this这位老大哥，相信大家不会陌生。大家在遇到this时，很多朋友难免会有个疑问：“这个this是什么，它到底指向谁？”今天，针对this的指向问题，进行了整理。本篇博客，博主给大家详尽介绍了不同情况下，this的指向！！以下奉上博主总结的关于this的指向详解，希望对各位开发者朋友有所帮助： 1、谁最终调用函数，this指向谁。 this指向的">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面向对象编程—this详解">
+<meta property="og:url" content="http://www.tybxqy.online/2017/05/09/JavaScript面向对象编程—this详解/index.html">
+<meta property="og:site_name" content="幻墨如烟">
+<meta property="og:description" content="前言在JavaScriptOPPt面向对象编程中，this这位老大哥，相信大家不会陌生。大家在遇到this时，很多朋友难免会有个疑问：“这个this是什么，它到底指向谁？”今天，针对this的指向问题，进行了整理。本篇博客，博主给大家详尽介绍了不同情况下，this的指向！！以下奉上博主总结的关于this的指向详解，希望对各位开发者朋友有所帮助： 1、谁最终调用函数，this指向谁。 this指向的">
+<meta property="og:updated_time" content="2017-05-11T09:18:43.647Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript面向对象编程—this详解">
+<meta name="twitter:description" content="前言在JavaScriptOPPt面向对象编程中，this这位老大哥，相信大家不会陌生。大家在遇到this时，很多朋友难免会有个疑问：“这个this是什么，它到底指向谁？”今天，针对this的指向问题，进行了整理。本篇博客，博主给大家详尽介绍了不同情况下，this的指向！！以下奉上博主总结的关于this的指向详解，希望对各位开发者朋友有所帮助： 1、谁最终调用函数，this指向谁。 this指向的">
+    
+        <link rel="alternate" type="application/atom+xml" title="幻墨如烟" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">冰雪奇缘</h5>
+          <a href="mailto:tyqianying@163.com" title="tyqianying@163.com" class="mail">tyqianying@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/tianyuan068" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/img/wechat.jpg" target="_blank" >
+                <i class="icon icon-lg icon-wechat"></i>
+                Wechat
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/img/qq.jpg" target="_blank" >
+                <i class="icon icon-lg icon-qq"></i>
+                Qq
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/u/2782119983/home?wvr=5" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/tianyuan068/tortorse" target="_blank" >
+                <i class="icon icon-lg icon-about"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript面向对象编程—this详解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript面向对象编程—this详解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-09T13:11:18.000Z" itemprop="datePublished" class="page-time">
+  2017-05-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、谁最终调用函数，this指向谁。"><span class="post-toc-number">2.</span> <span class="post-toc-text">1、谁最终调用函数，this指向谁。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、this指向的规律-与函数调用的方式息息相关"><span class="post-toc-number">3.</span> <span class="post-toc-text">2、this指向的规律(与函数调用的方式息息相关</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-JavaScript面向对象编程—this详解"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript面向对象编程—this详解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-09 21:11:18" datetime="2017-05-09T13:11:18.000Z"  itemprop="datePublished">2017-05-09</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在JavaScriptOPPt面向对象编程中，this这位老大哥，相信大家不会陌生。大家在遇到this时，很多朋友难免会有个疑问：“这个this是什么，它到底指向谁？”<br>今天，针对this的指向问题，进行了整理。本篇博客，博主给大家详尽介绍了不同情况下，this的指向！！以下奉上博主总结的关于this的指向详解，希望对各位开发者朋友有所帮助：</p>
+<h3 id="1、谁最终调用函数，this指向谁。"><a href="#1、谁最终调用函数，this指向谁。" class="headerlink" title="1、谁最终调用函数，this指向谁。"></a>1、谁最终调用函数，this指向谁。</h3><ul>
+<li>this指向的，永远只可能是对象！！！！！</li>
+<li>this指向谁，永远不取决于this写在哪，而是取决于this在哪调用；</li>
+<li>this指向的对象，我们称之为函数的上下文context，也叫函数的调用者</li>
+</ul>
+<h3 id="2、this指向的规律-与函数调用的方式息息相关"><a href="#2、this指向的规律-与函数调用的方式息息相关" class="headerlink" title="2、this指向的规律(与函数调用的方式息息相关"></a>2、this指向的规律(与函数调用的方式息息相关</h3><p>this指向的情况，取决于函数调用的方式有哪些：</p>
+<ul>
+<li>通过函数名()直接调用的：this指向window</li>
+<li>通过对象.函数名()调用的：this指向这个对象；</li>
+<li>函数作为数组的一个元素，通过数组下标调用的：this指向这个数组</li>
+<li>函数作为window内置函数的回调函数调用时：this指向windowsetTimeout(func,1000);setInterval等</li>
+<li>函数作为构造函数，用new关键字调用时：this指向的是new出的新对象</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>this详解<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"></div><div class="line">function func (name) &#123;</div><div class="line">console.log(this);</div><div class="line">&#125;</div><div class="line">func();//window</div><div class="line">//狭义对象</div><div class="line">var obj=&#123;</div><div class="line">name:"obj",</div><div class="line">func1:func</div><div class="line">&#125;;</div><div class="line">obj.func1();//obj</div><div class="line">//广义对象</div><div class="line">document.getElementById("div").onclick=function () &#123;</div><div class="line">this.style.backgroundColor="red";</div><div class="line">&#125;;//this指向div    </div><div class="line"></div><div class="line">//函数作为数组的一个元素，通过数组下标调用的：this指向这个数组</div><div class="line">var arr=[func,1,2,3]</div><div class="line">arr[0]();</div><div class="line"></div><div class="line">//函数作为window内置函数的回调函数调用时：this指向window</div><div class="line">setTimeout(func,1000);</div><div class="line">//setInterval等</div><div class="line"></div><div class="line">//函数作为构造函数，用new关键字调用时：this指向的是new出的新对象</div><div class="line">var obj=new func;//this指向的是new出的新obj</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/*</div><div class="line">* 综合小练习</div><div class="line">*/</div><div class="line">var obj1=&#123;</div><div class="line">name:"obj1",</div><div class="line">arr:[setTimeout(func,5000),1,2,3]</div><div class="line">&#125;</div><div class="line">document.getElementById("div").onclick=obj1.arr[0]();//函数最终调用者：setTimeout；符合规律⑤，this指向window</div><div class="line"></div><div class="line">var obj1=&#123;</div><div class="line">name:"obj1",</div><div class="line">arr:[func,1,2,3]</div><div class="line">&#125;</div><div class="line">document.getElementById("div").onclick=obj1.arr[0]();//函数最终调用者：arr数组下标；符合规律③，this指向arr</div><div class="line"></div><div class="line">var obj1=&#123;</div><div class="line">name:"obj1",</div><div class="line">arr:[&#123;name:'arrObj',fun:func&#125;,1,2,3]</div><div class="line">&#125;</div><div class="line">document.getElementById("div").onclick=obj1.arr[0].fun();//函数最终调用者：对象；符合规律②，this指向&#123;name:'arrObj',fun:func&#125;这个对象</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-11T09:18:43.647Z" itemprop="dateUpdated">2017-05-11 17:18:43</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://www.tybxqy.online">
+            <img src="/img/avatar.jpg" alt="冰雪奇缘">
+            冰雪奇缘
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/05/09/使用Vue搭建Vue-webpack项目/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">使用Vue搭建Vue-webpack项目</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/05/09/display的值及作用/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">display的值及作用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>冰雪奇缘 &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '亲！在哪呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又回来了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

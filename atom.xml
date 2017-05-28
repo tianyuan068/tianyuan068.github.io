@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>幻墨如烟</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.tybxqy.online/"/>
+  <updated>2017-05-09T11:45:14.555Z</updated>
+  <id>http://www.tybxqy.online/</id>
+  
+  <author>
+    <name>冰雪奇缘</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.tybxqy.online/2017/05/13/hello-world/"/>
+    <id>http://www.tybxqy.online/2017/05/13/hello-world/</id>
+    <published>2017-05-13T12:48:25.303Z</published>
+    <updated>2017-05-09T11:45:14.555Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用Vue搭建Vue-webpack项目</title>
+    <link href="http://www.tybxqy.online/2017/05/09/%E4%BD%BF%E7%94%A8Vue%E6%90%AD%E5%BB%BAVue-webpack%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://www.tybxqy.online/2017/05/09/使用Vue搭建Vue-webpack项目/</id>
+    <published>2017-05-09T13:51:43.000Z</published>
+    <updated>2017-05-13T13:09:59.226Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>对于Vue.js来说，如果你想要快速开始，那么只需要在你的html中引入一个&lt;script&gt;标签,加上CDN的地址即可。但是，这并不算是一个完整的vue实际应用。在实际应用中，我们必须要一系列的工具，包括：模块化，转译，预处理，热加载，静态检测和自动化测试等。对于一个需要长期维护和大型的项目而言，这些工具是必不可少的，但是尝试配置初始化这些很痛苦.这就是我们发布vue官方提供的脚手架工具的原因，一个简单的构建工具，通过几个默认的步骤帮助你快速的构建Vue.js项目。
+</code></pre><ol>
+<li>安装node环境<br> windows下推荐安装git bash</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://images2015.cnblogs.com/blog/908144/201705/908144-20170509203048566-67667409.png" alt="node环境" title="">
+                </div>
+                <div class="image-caption">node环境</div>
+            </figure>
+<p>第一步检测是否安装node；没有安装node的同学请到官网下载<br>安装成功后在命令行查看node版本，如果有说明安装成功。</p>
+<ol>
+<li>安装vue工具vue-cli</li>
+</ol>
+<p>大家在安装node的时候，会自动安装npm；</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://images2015.cnblogs.com/blog/908144/201705/908144-20170509203432738-1814142793.png" alt="vue工具" title="">
+                </div>
+                <div class="image-caption">vue工具</div>
+            </figure>
+<p>可以先行查看npm版本；<br>使用npm安装vue-cli：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vue-cli -g</div></pre></td></tr></table></figure>
+<ol>
+<li>准备工作已经完毕，下面直接使用vue-cli初始化webpack项目；</li>
+</ol>
+<p>vue init webpack yourprojectname(项目名)</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://images2015.cnblogs.com/blog/908144/201705/908144-20170509204132457-2130011615.png" alt="初始化webpack" title="">
+                </div>
+                <div class="image-caption">初始化webpack</div>
+            </figure>
+<p>一路回车<br>可以看到我们刚才创建的webpack项目已经建好了</p>
+<ul>
+<li>安装依赖<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>国内有些包npm无法安装，可以使用cnpm安装(较快)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install</div></pre></td></tr></table></figure>
+<p>5.启动本地开发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ http-server</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;对于Vue.js来说，如果你想要快速开始，那么只需要在你的html中引入一个&amp;lt;script&amp;gt;标签,加上CDN的地
+    
+    </summary>
+    
+      <category term="Vue" scheme="http://www.tybxqy.online/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://www.tybxqy.online/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript面向对象编程—this详解</title>
+    <link href="http://www.tybxqy.online/2017/05/09/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E2%80%94this%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://www.tybxqy.online/2017/05/09/JavaScript面向对象编程—this详解/</id>
+    <published>2017-05-09T13:11:18.000Z</published>
+    <updated>2017-05-11T09:18:43.647Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在JavaScriptOPPt面向对象编程中，this这位老大哥，相信大家不会陌生。大家在遇到this时，很多朋友难免会有个疑问：“这个this是什么，它到底指向谁？”<br>今天，针对this的指向问题，进行了整理。本篇博客，博主给大家详尽介绍了不同情况下，this的指向！！以下奉上博主总结的关于this的指向详解，希望对各位开发者朋友有所帮助：</p>
+<h3 id="1、谁最终调用函数，this指向谁。"><a href="#1、谁最终调用函数，this指向谁。" class="headerlink" title="1、谁最终调用函数，this指向谁。"></a>1、谁最终调用函数，this指向谁。</h3><ul>
+<li>this指向的，永远只可能是对象！！！！！</li>
+<li>this指向谁，永远不取决于this写在哪，而是取决于this在哪调用；</li>
+<li>this指向的对象，我们称之为函数的上下文context，也叫函数的调用者</li>
+</ul>
+<h3 id="2、this指向的规律-与函数调用的方式息息相关"><a href="#2、this指向的规律-与函数调用的方式息息相关" class="headerlink" title="2、this指向的规律(与函数调用的方式息息相关"></a>2、this指向的规律(与函数调用的方式息息相关</h3><p>this指向的情况，取决于函数调用的方式有哪些：</p>
+<ul>
+<li>通过函数名()直接调用的：this指向window</li>
+<li>通过对象.函数名()调用的：this指向这个对象；</li>
+<li>函数作为数组的一个元素，通过数组下标调用的：this指向这个数组</li>
+<li>函数作为window内置函数的回调函数调用时：this指向windowsetTimeout(func,1000);setInterval等</li>
+<li>函数作为构造函数，用new关键字调用时：this指向的是new出的新对象</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>this详解<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"></div><div class="line">function func (name) &#123;</div><div class="line">console.log(this);</div><div class="line">&#125;</div><div class="line">func();//window</div><div class="line">//狭义对象</div><div class="line">var obj=&#123;</div><div class="line">name:"obj",</div><div class="line">func1:func</div><div class="line">&#125;;</div><div class="line">obj.func1();//obj</div><div class="line">//广义对象</div><div class="line">document.getElementById("div").onclick=function () &#123;</div><div class="line">this.style.backgroundColor="red";</div><div class="line">&#125;;//this指向div    </div><div class="line"></div><div class="line">//函数作为数组的一个元素，通过数组下标调用的：this指向这个数组</div><div class="line">var arr=[func,1,2,3]</div><div class="line">arr[0]();</div><div class="line"></div><div class="line">//函数作为window内置函数的回调函数调用时：this指向window</div><div class="line">setTimeout(func,1000);</div><div class="line">//setInterval等</div><div class="line"></div><div class="line">//函数作为构造函数，用new关键字调用时：this指向的是new出的新对象</div><div class="line">var obj=new func;//this指向的是new出的新obj</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/*</div><div class="line">* 综合小练习</div><div class="line">*/</div><div class="line">var obj1=&#123;</div><div class="line">name:"obj1",</div><div class="line">arr:[setTimeout(func,5000),1,2,3]</div><div class="line">&#125;</div><div class="line">document.getElementById("div").onclick=obj1.arr[0]();//函数最终调用者：setTimeout；符合规律⑤，this指向window</div><div class="line"></div><div class="line">var obj1=&#123;</div><div class="line">name:"obj1",</div><div class="line">arr:[func,1,2,3]</div><div class="line">&#125;</div><div class="line">document.getElementById("div").onclick=obj1.arr[0]();//函数最终调用者：arr数组下标；符合规律③，this指向arr</div><div class="line"></div><div class="line">var obj1=&#123;</div><div class="line">name:"obj1",</div><div class="line">arr:[&#123;name:'arrObj',fun:func&#125;,1,2,3]</div><div class="line">&#125;</div><div class="line">document.getElementById("div").onclick=obj1.arr[0].fun();//函数最终调用者：对象；符合规律②，this指向&#123;name:'arrObj',fun:func&#125;这个对象</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在JavaScriptOPPt面向对象编程中，this这位老大哥，相信大家不会陌生。大家在遇到this时，很多朋友难免会有个疑问：“这个th
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://www.tybxqy.online/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>display的值及作用</title>
+    <link href="http://www.tybxqy.online/2017/05/09/display%E7%9A%84%E5%80%BC%E5%8F%8A%E4%BD%9C%E7%94%A8/"/>
+    <id>http://www.tybxqy.online/2017/05/09/display的值及作用/</id>
+    <published>2017-05-09T11:58:06.000Z</published>
+    <updated>2017-05-11T09:18:50.192Z</updated>
+    
+    <content type="html"><![CDATA[<p>display的值,及他们的作用分别是？</p>
+<ul>
+<li>block 象块类型元素一样显示。</li>
+<li>none 缺省值。象行内元素类型一样显示。</li>
+<li>inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。</li>
+<li>list-item 象块类型元素一样显示，并添加样式列表标记。</li>
+<li>table 此元素会作为块级表格来显示</li>
+<li>inherit 规定应该从父元素继承 display 属性的值</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;display的值,及他们的作用分别是？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;block 象块类型元素一样显示。&lt;/li&gt;
+&lt;li&gt;none 缺省值。象行内元素类型一样显示。&lt;/li&gt;
+&lt;li&gt;inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。&lt;/li&gt;
+&lt;
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://www.tybxqy.online/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>盒子模型</title>
+    <link href="http://www.tybxqy.online/2017/05/09/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://www.tybxqy.online/2017/05/09/盒子模型/</id>
+    <published>2017-05-09T11:43:45.000Z</published>
+    <updated>2017-05-13T13:09:54.929Z</updated>
+    
+    <content type="html"><![CDATA[<p>盒子模型<br>在网页中，一个元素占有空间的大小由几个部分构成，其中包括元素的内容（content），元素的内边距（padding），元素的边框（border），元素的外边距（margin）四个部分。这四个部分占有的空间中，有的部分可以显示相应的内容，而有的部分只用来分隔相邻的区域或区域。4个部分一起构成了css中元素的盒模型。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://www.runoob.com/images/box-model.gif" alt="盒子模型" title="">
+                </div>
+                <div class="image-caption">盒子模型</div>
+            </figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;盒子模型&lt;br&gt;在网页中，一个元素占有空间的大小由几个部分构成，其中包括元素的内容（content），元素的内边距（padding），元素的边框（border），元素的外边距（margin）四个部分。这四个部分占有的空间中，有的部分可以显示相应的内容，而有的部分只用来分隔相
+    
+    </summary>
+    
+      <category term="css" scheme="http://www.tybxqy.online/categories/css/"/>
+    
+    
+      <category term="css" scheme="http://www.tybxqy.online/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="http://www.tybxqy.online/2017/05/09/My-New-Post/"/>
+    <id>http://www.tybxqy.online/2017/05/09/My-New-Post/</id>
+    <published>2017-05-09T11:10:38.000Z</published>
+    <updated>2017-05-09T11:10:38.484Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
